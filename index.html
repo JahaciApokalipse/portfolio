@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jahači Apokalipse</title>
+  <meta name="description" content="Jahači Apokalipse (Riders of the Apocalypse) — competitive hackathon team from Serbia.">
+  <meta property="og:title" content="Jahači Apokalipse">
+  <meta property="og:description" content="Competitive hackathon team from Serbia.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/images/apocalypse-riders.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <svg style="position:absolute;width:0;height:0" aria-hidden="true">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+  </svg>
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">
+      <img src="assets/images/apocalypse-riders.png" alt="" width="28" height="28">
+      <span>Jahači Apokalipse</span>
+    </a>
+    <div class="nav__links">
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <div class="hero__logo">
+          <img class="hero__logo-thorns" src="assets/images/thorns.png" alt="" width="160" height="160">
+          <img class="hero__logo-horse" src="assets/images/horse.png" alt="Jahači Apokalipse logo" width="160" height="160">
+        </div>
+        <h1 class="hero__title">Jahači<br>Apokalipse</h1>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M7 10l5 5 5-5"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about">
+        <h2 class="section-heading">About Us</h2>
+        <p class="about__text">Hackathon team based in Serbia. Four members with multiple podium finishes across national competitions. Next up, FON Hakaton 2026.</p>
+      </div>
+    </section>
+
+    <section class="section" id="team">
+      <div class="container">
+        <h2 class="section-heading">Meet the Team</h2>
+        <div class="team-grid">
+
+          <article class="team-card reveal">
+            <div class="team-card__photo">
+              <img src="assets/images/ognjen.png" alt="Ognjen Dimitrijević">
+              <span class="team-card__initials" aria-hidden="true">OD</span>
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">Ognjen Dimitrijević</h3>
+              <span class="team-card__role">Backend & Full-stack · Team Lead</span>
+              <div class="team-card__links">
+                <a href="https://github.com/dimitrijevic-dev" target="_blank" rel="noopener" aria-label="Ognjen's GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/dimitrijevic-dev/" target="_blank" rel="noopener" aria-label="Ognjen's LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-card__photo">
+              <img src="assets/images/dimitrije.jpg" alt="Dimitrije Stevanović">
+              <span class="team-card__initials" aria-hidden="true">DS</span>
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">Dimitrije Stevanović</h3>
+              <span class="team-card__role">Frontend & UI Development</span>
+              <div class="team-card__links">
+                <a href="https://github.com/dimasteva" target="_blank" rel="noopener" aria-label="Dimitrije's GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/dimasteva/" target="_blank" rel="noopener" aria-label="Dimitrije's LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-card__photo">
+              <img src="assets/images/anastasija.png" alt="Anastasija">
+              <span class="team-card__initials" aria-hidden="true">A</span>
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">Anastasija</h3>
+              <span class="team-card__role">Design & Visual Identity</span>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-card__photo">
+              <img src="assets/images/emilija.png" alt="Emilija">
+              <span class="team-card__initials" aria-hidden="true">E</span>
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">Emilija</h3>
+              <span class="team-card__role">Full-stack & Presentations</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="achievements">
+      <div class="container">
+
+        <h2 class="section-heading">Achievements</h2>
+
+        <div class="achievements-grid">
+          <div class="achievement-card reveal">
+            <span class="achievement-card__place">1st</span>
+            <span class="achievement-card__label">Place</span>
+            <span class="achievement-card__comp">FON HZS 7.0</span>
+          </div>
+          <div class="achievement-card reveal">
+            <span class="achievement-card__place">1st</span>
+            <span class="achievement-card__label">Place</span>
+            <span class="achievement-card__comp">FON HZS 7.0 Selection</span>
+          </div>
+          <div class="achievement-card reveal">
+            <span class="achievement-card__place">3rd</span>
+            <span class="achievement-card__label">Place</span>
+            <span class="achievement-card__comp">SUMA HS Algorithm Competition</span>
+          </div>
+          <div class="achievement-card reveal">
+            <span class="achievement-card__place">95<span class="achievement-card__slash">/100</span></span>
+            <span class="achievement-card__label">Score</span>
+            <span class="achievement-card__comp">FON Hakaton 2026 Selection</span>
+          </div>
+        </div>
+
+        <p class="achievements-note reveal">Our members have multiple individual victories and high-scoring placements across Petlja Nationals, VISER Coding Competition, Informatics Olympiads, AI Olympiads, and Game Jams.</p>
+
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container gallery__header">
+        <h2 class="section-heading">Gallery</h2>
+        <div class="gallery__controls">
+          <button class="gallery__btn" id="gallery-prev" aria-label="Previous image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="gallery__btn" id="gallery-next" aria-label="Next image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="gallery__track" id="gallery-track">
+          <figure class="gallery__item">
+            <img src="assets/images/gallery-1.jpg" alt="Hackathon photo" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="assets/images/gallery-2.jpg" alt="Hackathon photo" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="assets/images/gallery-3.jpg" alt="Hackathon photo" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="assets/images/gallery-4.jpg" alt="Hackathon photo" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__copy">&copy; 2026 Jahači Apokalipse</span>
+      <a href="https://github.com/JahaciApokalipse" class="footer__link" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
