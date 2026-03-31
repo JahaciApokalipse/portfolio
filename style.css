@@ -595,11 +595,7 @@ section[id] {
   }
 
   .nav__links {
-    gap: var(--space-sm);
-  }
-
-  .nav__links a {
-    font-size: 0.8rem;
+    display: none;
   }
 
   .hero__logo {
