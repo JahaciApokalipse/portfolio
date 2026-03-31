@@ -1,25 +1,24 @@
 (function () {
   'use strict';
 
-  const nav = document.getElementById('nav');
-  const hero = document.getElementById('hero');
+  var nav = document.getElementById('nav');
+  var hero = document.getElementById('hero');
 
   if (nav && hero) {
-    const navObserver = new IntersectionObserver(
-      ([entry]) => {
-        nav.classList.toggle('is-scrolled', !entry.isIntersecting);
+    new IntersectionObserver(
+      function (entries) {
+        nav.classList.toggle('is-scrolled', !entries[0].isIntersecting);
       },
       { threshold: 0, rootMargin: '-64px 0px 0px 0px' }
-    );
-    navObserver.observe(hero);
+    ).observe(hero);
   }
 
-  const reveals = document.querySelectorAll('.reveal');
+  var reveals = document.querySelectorAll('.reveal');
 
   if (reveals.length) {
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+    var revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
             revealObserver.unobserve(entry.target);
@@ -28,45 +27,65 @@
       },
       { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
     );
-
-    reveals.forEach((el) => revealObserver.observe(el));
+    reveals.forEach(function (el) { revealObserver.observe(el); });
   }
 
-  const track = document.getElementById('gallery-track');
-  const prevBtn = document.getElementById('gallery-prev');
-  const nextBtn = document.getElementById('gallery-next');
+  var track = document.getElementById('gallery-track');
+  var prevBtn = document.getElementById('gallery-prev');
+  var nextBtn = document.getElementById('gallery-next');
 
   if (track && prevBtn && nextBtn) {
-    let autoplayTimer = null;
-    let isPaused = false;
+    var items = [].slice.call(track.querySelectorAll('.gallery__item'));
+    var itemCount = items.length;
+    var autoplayTimer = null;
+    var isPaused = false;
 
-    function getScrollAmount() {
-      const item = track.querySelector('.gallery__item');
+    items.forEach(function (item) {
+      track.appendChild(item.cloneNode(true));
+    });
+
+    function getItemSize() {
+      var item = track.querySelector('.gallery__item');
       if (!item) return 300;
-      const gap = parseFloat(getComputedStyle(track).gap) || 16;
-      return item.offsetWidth + gap;
+      return item.offsetWidth + (parseFloat(getComputedStyle(track).gap) || 16);
+    }
+
+    function getOriginalWidth() {
+      return itemCount * getItemSize();
+    }
+
+    function resetPosition() {
+      var ow = getOriginalWidth();
+      if (track.scrollLeft >= ow) {
+        track.style.scrollBehavior = 'auto';
+        track.style.scrollSnapType = 'none';
+        track.scrollLeft -= ow;
+        track.offsetHeight;
+        track.style.scrollBehavior = '';
+        track.style.scrollSnapType = '';
+      }
     }
 
     function scrollNext() {
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      if (track.scrollLeft >= maxScroll - 10) {
-        track.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-      }
+      track.scrollBy({ left: getItemSize(), behavior: 'smooth' });
+      setTimeout(resetPosition, 600);
     }
 
     function scrollPrev() {
-      if (track.scrollLeft <= 10) {
-        track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
-      } else {
-        track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      if (track.scrollLeft <= 0) {
+        track.style.scrollBehavior = 'auto';
+        track.style.scrollSnapType = 'none';
+        track.scrollLeft = getOriginalWidth();
+        track.offsetHeight;
+        track.style.scrollBehavior = '';
+        track.style.scrollSnapType = '';
       }
+      track.scrollBy({ left: -getItemSize(), behavior: 'smooth' });
     }
 
     function startAutoplay() {
       stopAutoplay();
-      autoplayTimer = setInterval(() => {
+      autoplayTimer = setInterval(function () {
         if (!isPaused) scrollNext();
       }, 4000);
     }
@@ -78,38 +97,38 @@
       }
     }
 
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', function () {
       scrollPrev();
       startAutoplay();
     });
 
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', function () {
       scrollNext();
       startAutoplay();
     });
 
-    track.addEventListener('mouseenter', () => { isPaused = true; });
-    track.addEventListener('mouseleave', () => { isPaused = false; });
+    track.addEventListener('mouseenter', function () { isPaused = true; });
+    track.addEventListener('mouseleave', function () { isPaused = false; });
 
-    let scrollTimeout;
-    track.addEventListener('scroll', () => {
+    var scrollTimeout;
+    track.addEventListener('scroll', function () {
       isPaused = true;
       clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => { isPaused = false; }, 2000);
+      scrollTimeout = setTimeout(function () { isPaused = false; }, 2000);
     }, { passive: true });
 
     startAutoplay();
   }
 
-  document.querySelectorAll('.team-card__photo img').forEach((img) => {
-    img.addEventListener('error', () => {
+  document.querySelectorAll('.team-card__photo img').forEach(function (img) {
+    img.addEventListener('error', function () {
       img.classList.add('is-broken');
     });
   });
 
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var target = document.querySelector(link.getAttribute('href'));
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
